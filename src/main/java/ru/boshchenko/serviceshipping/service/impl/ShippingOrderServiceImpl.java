@@ -27,7 +27,7 @@ public class ShippingOrderServiceImpl implements ShippingOrderService {
 
     private final DeliveryService deliveryService;
 
-    private final KafkaTemplate<UUID, ShippingEvent> kafkaTemplate;
+    private final KafkaTemplate<String, ShippingEvent> kafkaTemplate;
 
     private final EventMapper eventMapper;
 
@@ -53,7 +53,7 @@ public class ShippingOrderServiceImpl implements ShippingOrderService {
         ShippingEvent event = eventMapper.toShippingEvent(shippingOrder, paymentEvent.getUserId());
         kafkaTemplate.send(
                 "sent_orders",
-                event.getOrderId(),
+                event.getOrderId().toString(),
                 event
         );
         log.info("Создано сообщение: {}", event);
