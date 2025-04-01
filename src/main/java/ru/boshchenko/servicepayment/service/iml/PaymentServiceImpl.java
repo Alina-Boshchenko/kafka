@@ -30,7 +30,7 @@ public class PaymentServiceImpl implements PaymentService {
 
     private final RestTemplate restTemplate;
 
-    private final KafkaTemplate<UUID, PaymentEvent> kafkaTemplate;
+    private final KafkaTemplate<String, PaymentEvent> kafkaTemplate;
 
     private final BankService bankService;
 
@@ -40,7 +40,7 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     @Transactional(isolation = Isolation.READ_COMMITTED)
     public void create(OrderEvent orderEvent) {
-        String url = "http://orders-service:8080/api/user/{id}";
+        String url = "http://service-orders:8080/api/user/{id}";
         UserResponse userResponse = restTemplate.getForObject(url, UserResponse.class, orderEvent.getUserId());
         if (userResponse==null){
             log.error("Ошибка запроса по адресу {} юзер с id {} не найден", url,orderEvent.getUserId());
@@ -57,7 +57,7 @@ public class PaymentServiceImpl implements PaymentService {
         if (response.isSuccess()){
             payment.setStatus(PaymentStatus.SUCCESS);
             payment.setBankTransactionId(response.getTransactionId());
-            kafkaTemplate.send("payed_orders", orderEvent.getOrderId(), mapper.toPaymentEvent(orderEvent));
+            kafkaTemplate.send("payed_orders", orderEvent.getOrderId().toString(), mapper.toPaymentEvent(orderEvent));
             log.info("Оплата прошла успешно, сообщение отправлено в топик payed_orders");
         } else {
             payment.setStatus(PaymentStatus.FAILED);
