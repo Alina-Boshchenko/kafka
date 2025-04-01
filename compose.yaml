@@ -1,0 +1,214 @@
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    networks:
+      - kafka-network
+
+  kafka1:
+    image: confluentinc/cp-kafka:7.4.0
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka1:9092,EXTERNAL://localhost:19092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 3
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 2
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+    networks:
+      kafka-network:
+        aliases:
+          - kafka  # Добавляем алиас для обратной совместимости
+          - kafka-broker
+    
+
+  kafka2:
+    image: confluentinc/cp-kafka:7.4.0
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 2
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka2:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 3
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 2
+    networks:
+      kafka-network:
+        aliases:
+          - kafka-broker
+
+  kafka3:
+    image: confluentinc/cp-kafka:7.4.0
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 3
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka3:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 3
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 2
+    networks:
+      kafka-network:
+        aliases:
+          - kafka-broker
+
+  postgres-orders:
+    image: postgres:16
+    volumes:
+      - postgres-orders-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: orders-db
+      POSTGRES_USER: orders-user
+      POSTGRES_PASSWORD: orders-password
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  postgres-payment:
+    image: postgres:16
+    volumes:
+      - postgres-payment-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: payment-db
+      POSTGRES_USER: payment-user
+      POSTGRES_PASSWORD: payment-password
+    ports:
+      - "5433:5432"
+    networks:
+      - app-network
+
+  postgres-shipping:
+    image: postgres:16
+    volumes:
+      - postgres-shipping-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: shipping-db
+      POSTGRES_USER: shipping-user
+      POSTGRES_PASSWORD: shipping-password
+    ports:
+      - "5434:5432"
+    networks:
+      - app-network
+
+  service-orders:
+    volumes:
+      - ./service-orders/logs:/app/logs
+    build:
+      context: ./service-orders
+      dockerfile: Dockerfile
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-orders:5432/orders-db
+      SPRING_DATASOURCE_USERNAME: orders-user
+      SPRING_DATASOURCE_PASSWORD: orders-password
+    ports:
+      - "8080:8080"
+    depends_on:
+      kafka1:
+        condition: service_healthy
+      postgres-orders:
+        condition: service_healthy
+    networks:
+      - kafka-network
+      - app-network
+
+  service-payment:
+    volumes:
+      - ./service-payment/logs:/app/logs
+    build:
+      context: ./service-payment
+      dockerfile: Dockerfile
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-payment:5432/payment-db
+      SPRING_DATASOURCE_USERNAME: payment-user
+      SPRING_DATASOURCE_PASSWORD: payment-password
+    ports:
+      - "8081:8080"
+    networks:
+      - kafka-network
+      - app-network
+
+  service-shipping:
+    volumes:
+      - ./service-shipping/logs:/app/logs
+    build:
+      context: ./service-shipping
+      dockerfile: Dockerfile
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-shipping:5432/shipping-db
+      SPRING_DATASOURCE_USERNAME: shipping-user
+      SPRING_DATASOURCE_PASSWORD: shipping-password
+    ports:
+      - "8082:8080"
+#    depends_on:
+#      kafka:
+#        condition: service_healthy
+#      postgres-shipping:
+#        condition: service_healthy
+    networks:
+      - kafka-network
+      - app-network
+
+  service-notification:
+    volumes:
+      - ./service-notification/logs:/app/logs
+    build:
+      context: ./service-notification
+      dockerfile: Dockerfile
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+    ports:
+      - "8083:8080"
+#    depends_on:
+#      kafka:
+#        condition: service_healthy
+    networks:
+      - kafka-network
+      - app-network
+
+volumes:
+  postgres-orders-data:
+  postgres-payment-data:
+  postgres-shipping-data:
+
+networks:
+  kafka-network:
+    driver: bridge
+  app-network:
+    driver: bridge
+
+
+
+
+
+
+
+
+
+
+
+
+#volumes:
+#  postgres_data:
