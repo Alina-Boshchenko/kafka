@@ -1,0 +1,34 @@
+spring:
+  kafka:
+    bootstrap-servers: kafka:9092
+    topics:
+      - name: new_orders
+        num-partitions: 3
+        replication-factor: 1
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.UUIDSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: order-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+  application:
+    name: service-orders
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/changelog-master.yaml
+
+  datasource:
+    url: jdbc:postgresql://postgres-orders:5432/orders-db
+    username: orders-user
+    password: orders-password
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: none

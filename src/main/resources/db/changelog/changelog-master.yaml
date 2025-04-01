@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/v/user-table.yaml
+  - include:
+      file: db/changelog/v/order-table.yaml
