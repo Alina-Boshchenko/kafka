@@ -5,15 +5,17 @@ spring:
         enabled: true
         dlt-enabled: true
         dlt-suffix: .DLT
-    bootstrap-servers: kafka:9092
+    bootstrap-servers: kafka1:9092,kafka2:9092,kafka3:9092
     producer:
-      key-serializer: org.apache.kafka.common.serialization.UUIDSerializer
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
       group-id: shipping-group
       auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "ru.boshchenko.servicenotification.dto"
 
   application:
     name: service-notification
