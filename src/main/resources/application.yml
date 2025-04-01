@@ -1,0 +1,19 @@
+spring:
+  kafka:
+    listener:
+      default-error-handler:
+        enabled: true
+        dlt-enabled: true
+        dlt-suffix: .DLT
+    bootstrap-servers: kafka:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.UUIDSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: shipping-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+  application:
+    name: service-notification
