@@ -1,0 +1,39 @@
+spring:
+  kafka:
+    listener:
+      default-error-handler:
+        enabled: true
+        dlt-enabled: true
+        dlt-suffix: .DLT
+    bootstrap-servers: kafka:9092
+    topics:
+      - name: payed_orders
+        num-partitions: 3
+        replication-factor: 1
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.UUIDSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: orders-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+
+  application:
+    name: service-payment
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/changelog-master.yaml
+
+  datasource:
+    url: jdbc:postgresql://postgres-payment:5432/payment-db
+    username: payment-user
+    password: payment-password
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: none

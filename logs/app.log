@@ -1,0 +1,702 @@
+2025-04-01 02:36:25 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-01 02:36:25 [main] INFO  r.b.s.ServicePaymentApplication - Starting ServicePaymentApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-04-01 02:36:25 [main] INFO  r.b.s.ServicePaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-01 02:36:26 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-01 02:36:26 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interface.
+2025-04-01 02:36:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-01 02:36:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-01 02:36:26 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-01 02:36:26 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-01 02:36:26 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-01 02:36:26 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1650 ms
+2025-04-01 02:36:26 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-01 02:36:27 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5d71b500
+2025-04-01 02:36:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-01 02:36:27 [main] INFO  liquibase.database - Set default schema name to public
+2025-04-01 02:36:27 [main] INFO  liquibase.changelog - Creating database history table with name: public.databasechangelog
+2025-04-01 02:36:27 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-01 02:36:27 [main] INFO  liquibase.changelog - Change failed validation!
+2025-04-01 02:36:27 [main] INFO  liquibase.command - Logging exception.
+2025-04-01 02:36:27 [main] INFO  liquibase.ui - ERROR: Exception Details
+2025-04-01 02:36:27 [main] INFO  liquibase.ui - ERROR: Exception Primary Class:  ValidationFailedException
+2025-04-01 02:36:27 [main] INFO  liquibase.ui - ERROR: Exception Primary Reason:  Validation Failed:
+     1 changes have validation failures
+          'sql' is required, db/changelog/v/payment-table.yml::payment-table::boshchenko
+
+2025-04-01 02:36:27 [main] INFO  liquibase.ui - ERROR: Exception Primary Source:  4.29.2
+2025-04-01 02:36:27 [main] INFO  liquibase.command - Command execution complete
+2025-04-01 02:36:27 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 changes have validation failures
+          'sql' is required, db/changelog/v/payment-table.yml::payment-table::boshchenko
+
+2025-04-01 02:36:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-01 02:36:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-01 02:36:27 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-04-01 02:36:27 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-01 02:36:27 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 changes have validation failures
+          'sql' is required, db/changelog/v/payment-table.yml::payment-table::boshchenko
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at ru.boshchenko.servicepayment.ServicePaymentApplication.main(ServicePaymentApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64)
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 changes have validation failures
+          'sql' is required, db/changelog/v/payment-table.yml::payment-table::boshchenko
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	... 17 common frames omitted
+Caused by: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CommandExecutionException: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 changes have validation failures
+          'sql' is required, db/changelog/v/payment-table.yml::payment-table::boshchenko
+
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:267)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	... 24 common frames omitted
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 changes have validation failures
+          'sql' is required, db/changelog/v/payment-table.yml::payment-table::boshchenko
+
+	at liquibase.command.CommandScope.execute(CommandScope.java:258)
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216)
+	at liquibase.Scope.lambda$child$0(Scope.java:191)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:190)
+	at liquibase.Scope.child(Scope.java:169)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1329)
+	at liquibase.Liquibase.update(Liquibase.java:205)
+	at liquibase.Liquibase.update(Liquibase.java:188)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:305)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:257)
+	at liquibase.Scope.lambda$child$0(Scope.java:191)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:190)
+	at liquibase.Scope.child(Scope.java:169)
+	at liquibase.Scope.child(Scope.java:257)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:250)
+	... 26 common frames omitted
+Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 changes have validation failures
+          'sql' is required, db/changelog/v/payment-table.yml::payment-table::boshchenko
+
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:398)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:92)
+	at liquibase.command.CommandScope.execute(CommandScope.java:220)
+	... 42 common frames omitted
+2025-04-01 02:47:08 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-01 02:47:08 [main] INFO  r.b.s.ServicePaymentApplication - Starting ServicePaymentApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-04-01 02:47:08 [main] INFO  r.b.s.ServicePaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-01 02:47:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-01 02:47:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 1 JPA repository interface.
+2025-04-01 02:47:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-01 02:47:10 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-01 02:47:10 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-01 02:47:10 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-01 02:47:10 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-01 02:47:10 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1399 ms
+2025-04-01 02:47:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-01 02:47:10 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@47044f7d
+2025-04-01 02:47:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-01 02:47:10 [main] INFO  liquibase.database - Set default schema name to public
+2025-04-01 02:47:11 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-01 02:47:11 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-04-01 02:47:11 [main] INFO  liquibase.command - Using deploymentId: 3475631372
+2025-04-01 02:47:11 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-01 02:47:11 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/payment-table.yml::payment-table-extension::boshchenko
+2025-04-01 02:47:11 [main] INFO  liquibase.changelog - Custom SQL executed
+2025-04-01 02:47:11 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/payment-table.yml::payment-table-extension::boshchenko ran successfully in 21ms
+2025-04-01 02:47:11 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/payment-table.yml::payment-table-create::boshchenko
+2025-04-01 02:47:11 [main] INFO  liquibase.changelog - Table payments created
+2025-04-01 02:47:11 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/payment-table.yml::payment-table-create::boshchenko ran successfully in 14ms
+2025-04-01 02:47:11 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-04-01 02:47:11 [main] INFO  liquibase.util - Run:                          2
+2025-04-01 02:47:11 [main] INFO  liquibase.util - Previously run:               0
+2025-04-01 02:47:11 [main] INFO  liquibase.util - Filtered out:                 0
+2025-04-01 02:47:11 [main] INFO  liquibase.util - -------------------------------
+2025-04-01 02:47:11 [main] INFO  liquibase.util - Total change sets:            2
+2025-04-01 02:47:11 [main] INFO  liquibase.util - Update summary generated
+2025-04-01 02:47:11 [main] INFO  liquibase.command - Update command completed successfully.
+2025-04-01 02:47:11 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 2
+2025-04-01 02:47:11 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-04-01 02:47:11 [main] INFO  liquibase.command - Command execution complete
+2025-04-01 02:47:11 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-01 02:47:11 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-01 02:47:11 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-01 02:47:11 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-01 02:47:11 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-01 02:47:11 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.8
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-01 02:47:12 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-01 02:47:12 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-01 02:47:12 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'paymentRestController' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/controller/rest/PaymentRestController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'paymentServiceImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/service/iml/PaymentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'restTemplate' defined in class path resource [ru/boshchenko/servicepayment/config/AppConfig.class]: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+2025-04-01 02:47:12 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-01 02:47:12 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-01 02:47:12 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-01 02:47:12 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-04-01 02:47:12 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-01 02:47:12 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'paymentRestController' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/controller/rest/PaymentRestController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'paymentServiceImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/service/iml/PaymentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'restTemplate' defined in class path resource [ru/boshchenko/servicepayment/config/AppConfig.class]: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at ru.boshchenko.servicepayment.ServicePaymentApplication.main(ServicePaymentApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64)
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'paymentServiceImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/service/iml/PaymentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'restTemplate' defined in class path resource [ru/boshchenko/servicepayment/config/AppConfig.class]: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1667)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1555)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 28 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'restTemplate' defined in class path resource [ru/boshchenko/servicepayment/config/AppConfig.class]: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1609)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1555)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 42 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 55 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/apache/hc/client5/http/classic/HttpClient
+	at ru.boshchenko.servicepayment.config.AppConfig.restTemplate(AppConfig.java:13)
+	at ru.boshchenko.servicepayment.config.AppConfig$$SpringCGLIB$$0.CGLIB$restTemplate$0(<generated>)
+	at ru.boshchenko.servicepayment.config.AppConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:370)
+	at ru.boshchenko.servicepayment.config.AppConfig$$SpringCGLIB$$0.restTemplate(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171)
+	... 58 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.hc.client5.http.classic.HttpClient
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:587)
+	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107)
+	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 69 common frames omitted
+2025-04-01 02:56:12 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-01 02:56:12 [main] INFO  r.b.s.ServicePaymentApplication - Starting ServicePaymentApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-04-01 02:56:12 [main] INFO  r.b.s.ServicePaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-01 02:56:13 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-01 02:56:13 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 1 JPA repository interface.
+2025-04-01 02:56:14 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-01 02:56:14 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-01 02:56:14 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-01 02:56:14 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-01 02:56:14 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-01 02:56:14 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2054 ms
+2025-04-01 02:56:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-01 02:56:15 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7558c24b
+2025-04-01 02:56:15 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-01 02:56:15 [main] INFO  liquibase.database - Set default schema name to public
+2025-04-01 02:56:15 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-01 02:56:15 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-04-01 02:56:15 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-01 02:56:15 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-04-01 02:56:15 [main] INFO  liquibase.util - Run:                          0
+2025-04-01 02:56:15 [main] INFO  liquibase.util - Previously run:               2
+2025-04-01 02:56:15 [main] INFO  liquibase.util - Filtered out:                 0
+2025-04-01 02:56:15 [main] INFO  liquibase.util - -------------------------------
+2025-04-01 02:56:15 [main] INFO  liquibase.util - Total change sets:            2
+2025-04-01 02:56:15 [main] INFO  liquibase.util - Update summary generated
+2025-04-01 02:56:15 [main] INFO  liquibase.command - Command execution complete
+2025-04-01 02:56:15 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-01 02:56:15 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-01 02:56:15 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-01 02:56:16 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-01 02:56:16 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-01 02:56:16 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.8
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-01 02:56:16 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-01 02:56:16 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-01 02:56:17 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'paymentRestController' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/controller/rest/PaymentRestController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'paymentServiceImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/service/iml/PaymentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'restTemplate' defined in class path resource [ru/boshchenko/servicepayment/config/AppConfig.class]: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+2025-04-01 02:56:17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-01 02:56:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-01 02:56:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-01 02:56:17 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-04-01 02:56:17 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-01 02:56:17 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'paymentRestController' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/controller/rest/PaymentRestController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'paymentServiceImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/service/iml/PaymentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'restTemplate' defined in class path resource [ru/boshchenko/servicepayment/config/AppConfig.class]: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at ru.boshchenko.servicepayment.ServicePaymentApplication.main(ServicePaymentApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64)
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'paymentServiceImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/service/iml/PaymentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'restTemplate' defined in class path resource [ru/boshchenko/servicepayment/config/AppConfig.class]: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1667)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1555)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 28 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'restTemplate' defined in class path resource [ru/boshchenko/servicepayment/config/AppConfig.class]: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1609)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1555)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 42 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 55 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/apache/hc/client5/http/classic/HttpClient
+	at ru.boshchenko.servicepayment.config.AppConfig.restTemplate(AppConfig.java:13)
+	at ru.boshchenko.servicepayment.config.AppConfig$$SpringCGLIB$$0.CGLIB$restTemplate$0(<generated>)
+	at ru.boshchenko.servicepayment.config.AppConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:370)
+	at ru.boshchenko.servicepayment.config.AppConfig$$SpringCGLIB$$0.restTemplate(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171)
+	... 58 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.hc.client5.http.classic.HttpClient
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:587)
+	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107)
+	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 69 common frames omitted
+2025-04-01 03:01:42 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-01 03:01:42 [main] INFO  r.b.s.ServicePaymentApplication - Starting ServicePaymentApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-04-01 03:01:42 [main] INFO  r.b.s.ServicePaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-01 03:01:42 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-01 03:01:42 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 1 JPA repository interface.
+2025-04-01 03:01:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-01 03:01:43 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-01 03:01:43 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-01 03:01:43 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-01 03:01:43 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-01 03:01:43 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 851 ms
+2025-04-01 03:01:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-01 03:01:43 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3b435211
+2025-04-01 03:01:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-01 03:01:43 [main] INFO  liquibase.database - Set default schema name to public
+2025-04-01 03:01:43 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-01 03:01:43 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-04-01 03:01:43 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-01 03:01:43 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-04-01 03:01:43 [main] INFO  liquibase.util - Run:                          0
+2025-04-01 03:01:43 [main] INFO  liquibase.util - Previously run:               2
+2025-04-01 03:01:43 [main] INFO  liquibase.util - Filtered out:                 0
+2025-04-01 03:01:43 [main] INFO  liquibase.util - -------------------------------
+2025-04-01 03:01:43 [main] INFO  liquibase.util - Total change sets:            2
+2025-04-01 03:01:43 [main] INFO  liquibase.util - Update summary generated
+2025-04-01 03:01:43 [main] INFO  liquibase.command - Command execution complete
+2025-04-01 03:01:43 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-01 03:01:43 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-01 03:01:43 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-01 03:01:44 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-01 03:01:44 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-01 03:01:44 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.8
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-01 03:01:44 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-01 03:01:44 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-01 03:01:44 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'paymentRestController' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/controller/rest/PaymentRestController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'paymentServiceImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/service/iml/PaymentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'restTemplate' defined in class path resource [ru/boshchenko/servicepayment/config/AppConfig.class]: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+2025-04-01 03:01:44 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-01 03:01:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-01 03:01:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-01 03:01:44 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-04-01 03:01:44 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-01 03:01:44 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'paymentRestController' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/controller/rest/PaymentRestController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'paymentServiceImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/service/iml/PaymentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'restTemplate' defined in class path resource [ru/boshchenko/servicepayment/config/AppConfig.class]: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at ru.boshchenko.servicepayment.ServicePaymentApplication.main(ServicePaymentApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64)
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'paymentServiceImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/ru/boshchenko/servicepayment/service/iml/PaymentServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'restTemplate' defined in class path resource [ru/boshchenko/servicepayment/config/AppConfig.class]: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1667)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1555)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 28 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'restTemplate' defined in class path resource [ru/boshchenko/servicepayment/config/AppConfig.class]: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1609)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1555)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 42 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.client.RestTemplate]: Factory method 'restTemplate' threw exception with message: org/apache/hc/client5/http/classic/HttpClient
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 55 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/apache/hc/client5/http/classic/HttpClient
+	at ru.boshchenko.servicepayment.config.AppConfig.restTemplate(AppConfig.java:13)
+	at ru.boshchenko.servicepayment.config.AppConfig$$SpringCGLIB$$0.CGLIB$restTemplate$0(<generated>)
+	at ru.boshchenko.servicepayment.config.AppConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:370)
+	at ru.boshchenko.servicepayment.config.AppConfig$$SpringCGLIB$$0.restTemplate(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171)
+	... 58 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.hc.client5.http.classic.HttpClient
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:587)
+	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107)
+	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 69 common frames omitted
+2025-04-01 03:07:53 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-01 03:07:53 [main] INFO  r.b.s.ServicePaymentApplication - Starting ServicePaymentApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-04-01 03:07:53 [main] INFO  r.b.s.ServicePaymentApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-01 03:07:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-01 03:07:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 112 ms. Found 1 JPA repository interface.
+2025-04-01 03:07:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-01 03:07:55 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-01 03:07:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-01 03:07:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-01 03:07:55 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-01 03:07:55 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2159 ms
+2025-04-01 03:07:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-01 03:07:56 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2faa55bb
+2025-04-01 03:07:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-01 03:07:56 [main] INFO  liquibase.database - Set default schema name to public
+2025-04-01 03:07:56 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-01 03:07:56 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-04-01 03:07:56 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-01 03:07:57 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-04-01 03:07:57 [main] INFO  liquibase.util - Run:                          0
+2025-04-01 03:07:57 [main] INFO  liquibase.util - Previously run:               2
+2025-04-01 03:07:57 [main] INFO  liquibase.util - Filtered out:                 0
+2025-04-01 03:07:57 [main] INFO  liquibase.util - -------------------------------
+2025-04-01 03:07:57 [main] INFO  liquibase.util - Total change sets:            2
+2025-04-01 03:07:57 [main] INFO  liquibase.util - Update summary generated
+2025-04-01 03:07:57 [main] INFO  liquibase.command - Command execution complete
+2025-04-01 03:07:57 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-01 03:07:57 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-01 03:07:57 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-01 03:07:57 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-01 03:07:57 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-01 03:07:57 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.8
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-01 03:07:58 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-01 03:07:58 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-01 03:07:58 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-01 03:07:58 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-01 03:07:58 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-01 03:07:58 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-orders-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = orders-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.UUIDDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2025-04-01 03:07:58 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-04-01 03:07:59 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-04-01 03:07:59 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-04-01 03:07:59 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1743476879110
+2025-04-01 03:07:59 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Subscribed to topic(s): new_orders
+2025-04-01 03:07:59 [main] INFO  r.b.s.ServicePaymentApplication - Started ServicePaymentApplication in 6.262 seconds (process running for 7.047)
+2025-04-01 03:07:59 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error while fetching metadata with correlation id 2 : {new_orders=LEADER_NOT_AVAILABLE}
+2025-04-01 03:07:59 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Cluster ID: MJARXmrjQSS__rKpnQb94A
+2025-04-01 03:07:59 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error while fetching metadata with correlation id 5 : {new_orders=LEADER_NOT_AVAILABLE}
+2025-04-01 03:08:00 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+2025-04-01 03:08:00 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] (Re-)joining group
+2025-04-01 03:08:00 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Request joining group due to: need to re-join with the given member-id: consumer-orders-group-1-e61aa10e-5fd9-4213-a766-a2d87ada9ec2
+2025-04-01 03:08:00 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] (Re-)joining group
+2025-04-01 03:08:03 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-orders-group-1-e61aa10e-5fd9-4213-a766-a2d87ada9ec2', protocol='range'}
+2025-04-01 03:08:03 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Finished assignment for group at generation 1: {consumer-orders-group-1-e61aa10e-5fd9-4213-a766-a2d87ada9ec2=Assignment(partitions=[new_orders-0])}
+2025-04-01 03:08:03 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-orders-group-1-e61aa10e-5fd9-4213-a766-a2d87ada9ec2', protocol='range'}
+2025-04-01 03:08:03 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Notifying assignor about the new Assignment(partitions=[new_orders-0])
+2025-04-01 03:08:03 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Adding newly assigned partitions: new_orders-0
+2025-04-01 03:08:03 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Found no committed offset for partition new_orders-0
+2025-04-01 03:08:03 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Resetting offset for partition new_orders-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1 rack: null)], epoch=0}}.
+2025-04-01 03:08:03 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - orders-group: partitions assigned: [new_orders-0]

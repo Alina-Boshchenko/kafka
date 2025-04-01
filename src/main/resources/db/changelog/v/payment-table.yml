@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: payment-table-extension
+      author: boshchenko
+      changes:
+        - sql:
+            sql: CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
+
+  - changeSet:
+      id: payment-table-create
+      author: boshchenko
+      changes:
+        - createTable:
+            tableName: payments
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  defaultValueComputed: uuid_generate_v4()
+              - column:
+                  name: order_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: NUMERIC(10, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: bank_transaction_id
+                  type: VARCHAR(255)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
