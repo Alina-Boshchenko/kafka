@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: shippings-orders-table-extension
+      author: boshchenko
+      changes:
+        - sql:
+            sql: CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
+
+  - changeSet:
+      id: shippings-orders-table-create
+      author: boshchenko
+      changes:
+        - createTable:
+            tableName: shippings_orders
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  defaultValueComputed: uuid_generate_v4()
+              - column:
+                  name: order_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: tracking_number
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: VARCHAR(50)
+              - column:
+                  name: shipping_address
+                  type: TEXT
+                  constraints:
+                    nullable: false
