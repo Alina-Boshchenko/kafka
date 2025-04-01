@@ -1,17 +1,13 @@
 spring:
   kafka:
-    bootstrap-servers: kafka:9092
-    topics:
-      - name: new_orders
-        num-partitions: 3
-        replication-factor: 1
+    bootstrap-servers: kafka1:9092,kafka2:9092,kafka3:9092
     producer:
-      key-serializer: org.apache.kafka.common.serialization.UUIDSerializer
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
       group-id: order-group
       auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
 
   application:

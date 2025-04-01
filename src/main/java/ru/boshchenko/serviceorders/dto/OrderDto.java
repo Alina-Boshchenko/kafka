@@ -13,7 +13,7 @@ import java.util.List;
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class OrderDto {
 
-    @NotEmpty(message = "list products_id is required")
+    @NotEmpty(message = "list product_id is required")
     List<String> productId;
 
     @NotNull(message = "status is required")
@@ -25,7 +25,7 @@ public class OrderDto {
     BigDecimal amount;
 
     @NotNull(message = "delivery_address is required")
-    @Pattern(regexp = "^[а-яА-Я\\s\\d,-]+$", message = "Invalid address format")
+    @Pattern(regexp = "^[а-яА-Я\\s\\d,-.]+$", message = "Invalid address format")
     String deliveryAddress;
 
 }

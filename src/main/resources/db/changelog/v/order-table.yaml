@@ -27,6 +27,11 @@ databaseChangeLog:
                   name: user_id
                   type: uuid
               - column:
+                  name: delivery_address
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
                   name: created_at
                   type: timestamp
                   defaultValueComputed: CURRENT_TIMESTAMP

@@ -2,7 +2,6 @@ package ru.boshchenko.serviceorders.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.proxy.HibernateProxy;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -29,6 +28,7 @@ public class User {
 
     @Column(name = "card_number", nullable = false, unique = true)
     private String cardNumber;
+
 
 
     @Override

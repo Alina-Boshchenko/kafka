@@ -39,7 +39,7 @@ public class OrderRestController {
     }
 
     @PostMapping
-    public ResponseEntity<Order> create(@RequestParam UUID userId,@Valid @RequestBody OrderDto order) {
+    public ResponseEntity<Order> create(@RequestParam UUID userId, @Valid @RequestBody OrderDto order) {
         return ResponseEntity.status(HttpStatus.CREATED).body(orderService.create(userId, order));
     }
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -47,8 +48,8 @@ public class UserServiceImpl implements UserService {
     public User create(UserDto userDto) {
         User user = new User();
         user.setUsername(userDto.getUsername());
-        user.setPhone(user.getPhone());
-        user.setCardNumber(user.getCardNumber());
+        user.setPhone(userDto.getPhone());
+        user.setCardNumber(userDto.getCardNumber());
         return userRepo.save(user);
     }
 

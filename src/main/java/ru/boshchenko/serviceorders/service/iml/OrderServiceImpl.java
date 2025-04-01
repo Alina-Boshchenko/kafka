@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.common.errors.ResourceNotFoundException;
+import org.hibernate.engine.jdbc.spi.SqlExceptionHelper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -38,7 +39,7 @@ public class OrderServiceImpl implements OrderService {
 
     private final OrderMapping orderMapping;
 
-    private final KafkaTemplate<UUID, OrderEvent> kafkaTemplate;
+    private final KafkaTemplate<String, OrderEvent> kafkaTemplate;
 
     @Override
     @Transactional(isolation = Isolation.READ_COMMITTED)
@@ -53,8 +54,8 @@ public class OrderServiceImpl implements OrderService {
         OrderEvent event = orderMapping.toOrderEvent(sevedOrder);
 
         kafkaTemplate.send(
-                "orders",
-                event.getOrderId(),
+                "new_orders",
+                event.getOrderId().toString(),
                 event
         );
         log.info("Создано сообщение: {}", event);
