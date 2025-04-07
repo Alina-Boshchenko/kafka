@@ -10,6 +10,7 @@ import org.hibernate.engine.jdbc.spi.SqlExceptionHelper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +26,7 @@ import ru.boshchenko.serviceorders.service.UserService;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
 @RequiredArgsConstructor
 @Service
@@ -53,22 +55,31 @@ public class OrderServiceImpl implements OrderService {
 
         OrderEvent event = orderMapping.toOrderEvent(sevedOrder);
 
-        kafkaTemplate.send(
+        CompletableFuture<SendResult<String, OrderEvent>> future = kafkaTemplate.send(
                 "new_orders",
-                event.getOrderId().toString(),
+                user.getId().toString(),
                 event
         );
-        log.info("Создано сообщение: {}", event);
 
+        future.whenComplete((result, exception) -> {
+            if (exception != null){
+                log.error("Ошибка при отправки сообщения: {}", exception.getMessage());
+            } else {
+                log.info("Сообщение отправлено: {}", result.getRecordMetadata());
+            }
+        });
+        log.info("Попытка отправки сообщения асинхронно с ключом: айди клиента {}", userId);
         return sevedOrder;
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Page<Order> getAll(Pageable pageable) {
         return orderRepo.findAll(pageable);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Order getOne(UUID id) {
         Optional<Order> orderOptional = orderRepo.findById(id);
         return orderOptional.orElseThrow(() ->
@@ -76,6 +87,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Order> getMany(List<UUID> ids) {
         return orderRepo.findAllById(ids);
     }
@@ -83,6 +95,7 @@ public class OrderServiceImpl implements OrderService {
 
     @SneakyThrows
     @Override
+    @Transactional(isolation = Isolation.READ_COMMITTED)
     public Order patch(UUID id, JsonNode patchNode) {
         Order order = orderRepo.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException("Entity with id `%s` not found".formatted(id)));
@@ -93,6 +106,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    @Transactional(isolation = Isolation.READ_COMMITTED)
     public Order delete(UUID id) {
         Order order = orderRepo.findById(id).orElse(null);
         if (order != null) {

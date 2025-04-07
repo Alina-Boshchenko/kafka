@@ -9,6 +9,8 @@ import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 import ru.boshchenko.serviceorders.dto.UserDto;
 import ru.boshchenko.serviceorders.model.User;
 import ru.boshchenko.serviceorders.repo.UserRepository;
@@ -28,11 +30,13 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
+    @Transactional(readOnly = true)
     public Page<User> getAll(Pageable pageable) {
         return userRepo.findAll(pageable);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public User getOne(UUID id) {
         Optional<User> userOptional = userRepo.findById(id);
         return userOptional.orElseThrow(() ->
@@ -40,11 +44,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<User> getMany(List<UUID> ids) {
         return userRepo.findAllById(ids);
     }
 
     @Override
+    @Transactional(isolation = Isolation.READ_COMMITTED)
     public User create(UserDto userDto) {
         User user = new User();
         user.setUsername(userDto.getUsername());
@@ -55,6 +61,7 @@ public class UserServiceImpl implements UserService {
 
     @SneakyThrows
     @Override
+    @Transactional(isolation = Isolation.READ_COMMITTED)
     public User patch(UUID id, JsonNode patchNode) {
         User user = userRepo.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException("Entity with id `%s` not found".formatted(id)));
@@ -65,6 +72,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional(isolation = Isolation.READ_COMMITTED)
     public User delete(UUID id) {
         User user = userRepo.findById(id).orElse(null);
         if (user != null) {

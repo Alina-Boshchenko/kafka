@@ -19,8 +19,8 @@ public class OrderMapping {
 
     public OrderEvent toOrderEvent(Order order){
         return new OrderEvent(
-                order.getId(),
-                order.getUser().getId(),
+                order.getId().toString(),
+                order.getUser().getId().toString(),
                 order.getAmount(),
                 order.getProductId(),
                 order.getDeliveryAddress()
