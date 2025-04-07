@@ -3,14 +3,12 @@
     <property name="LOG_PATH" value="./logs" />
     <property name="LOG_FILE" value="app.log" />
 
-    <!-- Консольный вывод -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- Файловый вывод (исправленная версия) -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_PATH}/${LOG_FILE}</file>
         <encoder>
