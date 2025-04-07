@@ -1,11 +1,9 @@
 package ru.boshchenko.servicepayment.service.iml;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
-//import ru.boshchenko.servicepayment.dto.OrderEvent;
 import ru.boshchenko.serviceorders.dto.OrderEvent;
 import ru.boshchenko.servicepayment.service.OrderEventConsumer;
 import ru.boshchenko.servicepayment.service.PaymentService;
@@ -18,7 +16,11 @@ public class OrderEventConsumerImpl implements OrderEventConsumer {
     private final PaymentService paymentService;
 
     @Override
-    @KafkaListener(topics = "new_orders", groupId = "payment-group")
+    @KafkaListener(
+            topics = "${spring.kafka.topics.new_orders.name}",
+            groupId = "payment-group",
+            concurrency = "${spring.kafka.topics.new_orders.partitions}"
+    )
     public void handleOrder(OrderEvent orderEvent) {
         try {
             log.info("Получено сообщение: {}", orderEvent);

@@ -5,6 +5,15 @@ spring:
         enabled: true
         dlt-enabled: true
         dlt-suffix: .DLT
+    topics:
+      new_orders:
+        name: new_orders
+        partitions: 3
+        replication-factor: 3
+      payed_orders:
+        name: payed_orders
+        partitions: 3
+        replication-factor: 3
     bootstrap-servers: kafka1:9092,kafka2:9092,kafka3:9092
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
