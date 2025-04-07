@@ -16,7 +16,11 @@ public class PaymentEventConsumerImpl implements PaymentEventConsumer {
     private final ShippingOrderService service;
 
     @Override
-    @KafkaListener(topics = "payed_orders", groupId = "shipping-group")
+    @KafkaListener(
+            topics = "${spring.kafka.topics.payed_orders.name}",
+            groupId = "shipping-group",
+            concurrency = "${spring.kafka.topics.payed_orders.partitions}"
+    )
     public void handlePayment(PaymentEvent paymentEvent) {
         try {
             log.info("Получено сообщение: {}", paymentEvent);
