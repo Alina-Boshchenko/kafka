@@ -6,16 +6,16 @@ spring:
         dlt-enabled: true
         dlt-suffix: .DLT
     bootstrap-servers: kafka1:9092,kafka2:9092,kafka3:9092
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
-      group-id: shipping-group
+      group-id: notification-group
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
-        spring.json.trusted.packages: "ru.boshchenko.servicenotification.dto"
+        spring.json.trusted.packages: "*"
 
   application:
     name: service-notification

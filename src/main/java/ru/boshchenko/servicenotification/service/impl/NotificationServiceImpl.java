@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
-import ru.boshchenko.servicenotification.dto.ShippingEvent;
+import ru.boshchenko.serviceshipping.dto.ShippingEvent;
 import ru.boshchenko.servicenotification.dto.UserResponse;
 import ru.boshchenko.servicenotification.service.PhoneSendingService;
 import ru.boshchenko.servicenotification.service.NotificationService;
@@ -23,7 +23,7 @@ public class NotificationServiceImpl implements NotificationService {
     @Override
     @Transactional(isolation = Isolation.READ_COMMITTED)
     public void createNotificationOnAnEvent(ShippingEvent shippingEvent) {
-        String url = "http://orders-service:8080/api/user/{id}";
+        String url = "http://service-orders:8080/api/user/{id}";
         UserResponse userResponse = restTemplate.getForObject(url, UserResponse.class, shippingEvent.getUserId());
         if (userResponse==null){
             log.error("Ошибка запроса по адресу {} юзер с id {} не найден", url,shippingEvent.getUserId());

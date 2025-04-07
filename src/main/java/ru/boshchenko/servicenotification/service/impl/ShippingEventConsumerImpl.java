@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
-import ru.boshchenko.servicenotification.dto.ShippingEvent;
+import ru.boshchenko.serviceshipping.dto.ShippingEvent;
 import ru.boshchenko.servicenotification.service.NotificationService;
 import ru.boshchenko.servicenotification.service.ShippingEventConsumer;
 
@@ -16,9 +16,14 @@ public class ShippingEventConsumerImpl implements ShippingEventConsumer {
     private final NotificationService notificationService;
 
     @Override
-    @KafkaListener(topics = "sent_orders", groupId = "shipping-group")
+    @KafkaListener(topics = "sent_orders", groupId = "notification-group")
     public void handleShipping(ShippingEvent shippingEvent) {
+        try {
+            log.info("Получено сообщение: {}", shippingEvent);
         notificationService.createNotificationOnAnEvent(shippingEvent);
-        log.info("Принято сообщение в сервисе уведомлений {}", shippingEvent);
+            log.info("Обработано сообщение: {}", shippingEvent);
+        } catch (Exception e) {
+            log.error("Ошибка обработки сообщения: {}", e.getMessage(), e);
+        }
     }
 }
