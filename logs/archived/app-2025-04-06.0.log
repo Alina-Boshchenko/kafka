@@ -1,0 +1,1151 @@
+2025-04-06 08:30:52 [main] INFO  r.b.s.ServiceShippingApplication - Starting ServiceShippingApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-04-06 08:30:52 [main] INFO  r.b.s.ServiceShippingApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 08:30:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-06 08:30:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85 ms. Found 1 JPA repository interface.
+2025-04-06 08:30:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-06 08:30:55 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-06 08:30:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-06 08:30:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-06 08:30:55 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-06 08:30:55 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2662 ms
+2025-04-06 08:30:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-06 08:30:56 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2e56b4d
+2025-04-06 08:30:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-06 08:30:56 [main] INFO  liquibase.database - Set default schema name to public
+2025-04-06 08:30:56 [main] INFO  liquibase.changelog - Creating database history table with name: public.databasechangelog
+2025-04-06 08:30:56 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-06 08:30:56 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-04-06 08:30:56 [main] INFO  liquibase.command - Using deploymentId: 3928256967
+2025-04-06 08:30:56 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-06 08:30:56 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/shipping-order-table.yml::shippings-orders-table-extension::boshchenko
+2025-04-06 08:30:56 [main] INFO  liquibase.changelog - Custom SQL executed
+2025-04-06 08:30:56 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/shipping-order-table.yml::shippings-orders-table-extension::boshchenko ran successfully in 13ms
+2025-04-06 08:30:57 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/shipping-order-table.yml::shippings-orders-table-create::boshchenko
+2025-04-06 08:30:57 [main] INFO  liquibase.changelog - Table shippings_orders created
+2025-04-06 08:30:57 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/shipping-order-table.yml::shippings-orders-table-create::boshchenko ran successfully in 15ms
+2025-04-06 08:30:57 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-04-06 08:30:57 [main] INFO  liquibase.util - Run:                          2
+2025-04-06 08:30:57 [main] INFO  liquibase.util - Previously run:               0
+2025-04-06 08:30:57 [main] INFO  liquibase.util - Filtered out:                 0
+2025-04-06 08:30:57 [main] INFO  liquibase.util - -------------------------------
+2025-04-06 08:30:57 [main] INFO  liquibase.util - Total change sets:            2
+2025-04-06 08:30:57 [main] INFO  liquibase.util - Update summary generated
+2025-04-06 08:30:57 [main] INFO  liquibase.command - Update command completed successfully.
+2025-04-06 08:30:57 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 2
+2025-04-06 08:30:57 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-04-06 08:30:57 [main] INFO  liquibase.command - Command execution complete
+2025-04-06 08:30:57 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-06 08:30:57 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-06 08:30:57 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-06 08:30:57 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-06 08:30:57 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-06 08:30:57 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.8
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-06 08:30:58 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-06 08:30:58 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06 08:30:58 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-06 08:30:59 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [kafka:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = service-shipping-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-04-06 08:30:59 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-04-06 08:30:59 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-04-06 08:30:59 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1743928259697
+2025-04-06 08:30:59 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Node -1 disconnected.
+2025-04-06 08:30:59 [kafka-admin-client-thread | service-shipping-admin-0] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Connection to node -1 (kafka/172.18.0.7:9092) could not be established. Node may not be available.
+2025-04-06 08:30:59 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Node -1 disconnected.
+2025-04-06 08:30:59 [kafka-admin-client-thread | service-shipping-admin-0] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Connection to node -1 (kafka/172.18.0.7:9092) could not be established. Node may not be available.
+2025-04-06 08:31:00 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Node -1 disconnected.
+2025-04-06 08:31:00 [kafka-admin-client-thread | service-shipping-admin-0] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Connection to node -1 (kafka/172.18.0.7:9092) could not be established. Node may not be available.
+2025-04-06 08:31:00 [kafka-admin-client-thread | service-shipping-admin-0] WARN  o.a.k.clients.admin.KafkaAdminClient - [AdminClient clientId=service-shipping-admin-0] The DescribeTopicPartitions API is not supported, using Metadata API to describe topics.
+2025-04-06 08:31:01 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for service-shipping-admin-0 unregistered
+2025-04-06 08:31:01 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-04-06 08:31:01 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-06 08:31:01 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-04-06 08:31:01 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-06 08:31:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-06 08:31:01 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-payment-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = payment-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2025-04-06 08:31:01 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-04-06 08:31:01 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-04-06 08:31:01 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-04-06 08:31:01 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1743928261996
+2025-04-06 08:31:01 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Subscribed to topic(s): payed_orders
+2025-04-06 08:31:02 [main] INFO  r.b.s.ServiceShippingApplication - Started ServiceShippingApplication in 10.347 seconds (process running for 11.59)
+2025-04-06 08:31:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Cluster ID: LA0CedYgRm2UC5eLG1iEjA
+2025-04-06 08:31:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Discovered group coordinator kafka1:9092 (id: 2147483646 rack: null)
+2025-04-06 08:31:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] (Re-)joining group
+2025-04-06 08:31:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: need to re-join with the given member-id: consumer-payment-group-1-bdc75146-c728-4530-8395-a17f03e975d8
+2025-04-06 08:31:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] (Re-)joining group
+2025-04-06 08:31:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-payment-group-1-bdc75146-c728-4530-8395-a17f03e975d8', protocol='range'}
+2025-04-06 08:31:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Finished assignment for group at generation 1: {consumer-payment-group-1-bdc75146-c728-4530-8395-a17f03e975d8=Assignment(partitions=[payed_orders-0, payed_orders-1, payed_orders-2])}
+2025-04-06 08:31:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-payment-group-1-bdc75146-c728-4530-8395-a17f03e975d8', protocol='range'}
+2025-04-06 08:31:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Notifying assignor about the new Assignment(partitions=[payed_orders-0, payed_orders-1, payed_orders-2])
+2025-04-06 08:31:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Adding newly assigned partitions: payed_orders-0, payed_orders-1, payed_orders-2
+2025-04-06 08:31:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Found no committed offset for partition payed_orders-0
+2025-04-06 08:31:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Found no committed offset for partition payed_orders-1
+2025-04-06 08:31:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Found no committed offset for partition payed_orders-2
+2025-04-06 08:31:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting offset for partition payed_orders-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka2:9092 (id: 2 rack: null)], epoch=0}}.
+2025-04-06 08:31:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting offset for partition payed_orders-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka3:9092 (id: 3 rack: null)], epoch=0}}.
+2025-04-06 08:31:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting offset for partition payed_orders-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka1:9092 (id: 1 rack: null)], epoch=0}}.
+2025-04-06 08:31:05 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: partitions assigned: [payed_orders-0, payed_orders-1, payed_orders-2]
+2025-04-06 08:40:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node -1 disconnected.
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Revoke previously assigned partitions payed_orders-0, payed_orders-1, payed_orders-2
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: partitions revoked: [payed_orders-0, payed_orders-1, payed_orders-2]
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Member consumer-payment-group-1-bdc75146-c728-4530-8395-a17f03e975d8 sending LeaveGroup request to coordinator kafka1:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: consumer pro-actively leaving the group
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Unsubscribed all topics or patterns and assigned partitions
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: consumer pro-actively leaving the group
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node 2 sent an invalid full fetch response with extraIds=(EApSVXoVSHqxQUmR27vHiQ), response=()
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node 2 disconnected.
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node 1 sent an invalid full fetch response with extraIds=(EApSVXoVSHqxQUmR27vHiQ), response=()
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node 3 sent an invalid full fetch response with extraIds=(EApSVXoVSHqxQUmR27vHiQ), response=()
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-payment-group-1 unregistered
+2025-04-06 08:42:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: Consumer stopped
+2025-04-06 08:42:25 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-06 08:42:25 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-04-06 08:42:25 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06 08:42:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-06 08:42:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-06 10:05:43 [main] INFO  r.b.s.ServiceShippingApplication - Starting ServiceShippingApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-04-06 10:05:43 [main] INFO  r.b.s.ServiceShippingApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 10:05:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-06 10:05:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73 ms. Found 1 JPA repository interface.
+2025-04-06 10:05:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-06 10:05:46 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-06 10:05:46 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-06 10:05:46 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-06 10:05:46 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-06 10:05:46 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3001 ms
+2025-04-06 10:05:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-06 10:05:47 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@113f9078
+2025-04-06 10:05:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-06 10:05:47 [main] INFO  liquibase.database - Set default schema name to public
+2025-04-06 10:05:48 [main] INFO  liquibase.changelog - Creating database history table with name: public.databasechangelog
+2025-04-06 10:05:48 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-06 10:05:48 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-04-06 10:05:48 [main] INFO  liquibase.command - Using deploymentId: 3933948198
+2025-04-06 10:05:48 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-06 10:05:48 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/shipping-order-table.yml::shippings-orders-table-extension::boshchenko
+2025-04-06 10:05:48 [main] INFO  liquibase.changelog - Custom SQL executed
+2025-04-06 10:05:48 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/shipping-order-table.yml::shippings-orders-table-extension::boshchenko ran successfully in 12ms
+2025-04-06 10:05:48 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/shipping-order-table.yml::shippings-orders-table-create::boshchenko
+2025-04-06 10:05:48 [main] INFO  liquibase.changelog - Table shippings_orders created
+2025-04-06 10:05:48 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/shipping-order-table.yml::shippings-orders-table-create::boshchenko ran successfully in 15ms
+2025-04-06 10:05:48 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-04-06 10:05:48 [main] INFO  liquibase.util - Run:                          2
+2025-04-06 10:05:48 [main] INFO  liquibase.util - Previously run:               0
+2025-04-06 10:05:48 [main] INFO  liquibase.util - Filtered out:                 0
+2025-04-06 10:05:48 [main] INFO  liquibase.util - -------------------------------
+2025-04-06 10:05:48 [main] INFO  liquibase.util - Total change sets:            2
+2025-04-06 10:05:48 [main] INFO  liquibase.util - Update summary generated
+2025-04-06 10:05:48 [main] INFO  liquibase.command - Update command completed successfully.
+2025-04-06 10:05:48 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 2
+2025-04-06 10:05:48 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-04-06 10:05:48 [main] INFO  liquibase.command - Command execution complete
+2025-04-06 10:05:48 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-06 10:05:48 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-06 10:05:48 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-06 10:05:48 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-06 10:05:48 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-06 10:05:48 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.8
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-06 10:05:49 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-06 10:05:49 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06 10:05:49 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-06 10:05:50 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [kafka:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = service-shipping-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-04-06 10:05:50 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-04-06 10:05:50 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-04-06 10:05:50 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1743933950658
+2025-04-06 10:05:50 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Node -1 disconnected.
+2025-04-06 10:05:50 [kafka-admin-client-thread | service-shipping-admin-0] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Connection to node -1 (kafka/172.18.0.6:9092) could not be established. Node may not be available.
+2025-04-06 10:05:50 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Node -1 disconnected.
+2025-04-06 10:05:50 [kafka-admin-client-thread | service-shipping-admin-0] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Connection to node -1 (kafka/172.18.0.6:9092) could not be established. Node may not be available.
+2025-04-06 10:05:50 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Node -1 disconnected.
+2025-04-06 10:05:50 [kafka-admin-client-thread | service-shipping-admin-0] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Connection to node -1 (kafka/172.18.0.6:9092) could not be established. Node may not be available.
+2025-04-06 10:05:51 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Node -1 disconnected.
+2025-04-06 10:05:51 [kafka-admin-client-thread | service-shipping-admin-0] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Connection to node -1 (kafka/172.18.0.6:9092) could not be established. Node may not be available.
+2025-04-06 10:05:51 [kafka-admin-client-thread | service-shipping-admin-0] WARN  o.a.k.clients.admin.KafkaAdminClient - [AdminClient clientId=service-shipping-admin-0] The DescribeTopicPartitions API is not supported, using Metadata API to describe topics.
+2025-04-06 10:05:52 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for service-shipping-admin-0 unregistered
+2025-04-06 10:05:52 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-04-06 10:05:52 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-06 10:05:52 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-04-06 10:05:52 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-06 10:05:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-06 10:05:52 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-payment-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = payment-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2025-04-06 10:05:52 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-04-06 10:05:52 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-04-06 10:05:52 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-04-06 10:05:52 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1743933952350
+2025-04-06 10:05:52 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Subscribed to topic(s): payed_orders
+2025-04-06 10:05:52 [main] INFO  r.b.s.ServiceShippingApplication - Started ServiceShippingApplication in 9.674 seconds (process running for 11.181)
+2025-04-06 10:05:52 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Cluster ID: M0Rl5HYeRH-nvmVCWSI6Gw
+2025-04-06 10:05:53 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Discovered group coordinator kafka3:9092 (id: 2147483644 rack: null)
+2025-04-06 10:05:53 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] (Re-)joining group
+2025-04-06 10:05:53 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: need to re-join with the given member-id: consumer-payment-group-1-2ca76718-1e89-47e4-a4c1-0fc0ab4d93b3
+2025-04-06 10:05:53 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] (Re-)joining group
+2025-04-06 10:05:56 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-payment-group-1-2ca76718-1e89-47e4-a4c1-0fc0ab4d93b3', protocol='range'}
+2025-04-06 10:05:56 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Finished assignment for group at generation 1: {consumer-payment-group-1-2ca76718-1e89-47e4-a4c1-0fc0ab4d93b3=Assignment(partitions=[payed_orders-0, payed_orders-1, payed_orders-2])}
+2025-04-06 10:05:56 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-payment-group-1-2ca76718-1e89-47e4-a4c1-0fc0ab4d93b3', protocol='range'}
+2025-04-06 10:05:56 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Notifying assignor about the new Assignment(partitions=[payed_orders-0, payed_orders-1, payed_orders-2])
+2025-04-06 10:05:56 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Adding newly assigned partitions: payed_orders-0, payed_orders-1, payed_orders-2
+2025-04-06 10:05:56 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Found no committed offset for partition payed_orders-0
+2025-04-06 10:05:56 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Found no committed offset for partition payed_orders-1
+2025-04-06 10:05:56 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Found no committed offset for partition payed_orders-2
+2025-04-06 10:05:56 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting offset for partition payed_orders-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka3:9092 (id: 3 rack: null)], epoch=0}}.
+2025-04-06 10:05:56 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting offset for partition payed_orders-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka2:9092 (id: 2 rack: null)], epoch=0}}.
+2025-04-06 10:05:56 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting offset for partition payed_orders-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka1:9092 (id: 1 rack: null)], epoch=0}}.
+2025-04-06 10:05:56 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: partitions assigned: [payed_orders-0, payed_orders-1, payed_orders-2]
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Revoke previously assigned partitions payed_orders-0, payed_orders-1, payed_orders-2
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: partitions revoked: [payed_orders-0, payed_orders-1, payed_orders-2]
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Member consumer-payment-group-1-2ca76718-1e89-47e4-a4c1-0fc0ab4d93b3 sending LeaveGroup request to coordinator kafka3:9092 (id: 2147483644 rack: null) due to the consumer unsubscribed from all topics
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: consumer pro-actively leaving the group
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Unsubscribed all topics or patterns and assigned partitions
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: consumer pro-actively leaving the group
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node 3 sent an invalid full fetch response with extraIds=(gUW8OzvXRg2dKyY5j99j1Q), response=()
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node 2147483644 disconnected.
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node 3 disconnected.
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Cancelled in-flight METADATA request with correlation id 192 due to node 3 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, throttle time: 0ms, request timeout: 30000ms)
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node 2 disconnected.
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Cancelled in-flight FETCH request with correlation id 186 due to node 2 being disconnected (elapsed time since creation: 431ms, elapsed time since send: 431ms, throttle time: 0ms, request timeout: 30000ms)
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Cancelled in-flight FETCH request with correlation id 191 due to node 2 being disconnected (elapsed time since creation: 385ms, elapsed time since send: 387ms, throttle time: 0ms, request timeout: 30000ms)
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Error sending fetch request (sessionId=1812097950, epoch=FINAL) to node 2:
+org.apache.kafka.common.errors.DisconnectException: null
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-payment-group-1 unregistered
+2025-04-06 10:06:22 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: Consumer stopped
+2025-04-06 10:06:22 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-06 10:06:22 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-04-06 10:06:22 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06 10:06:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-06 10:06:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-06 22:36:18 [main] INFO  r.b.s.ServiceShippingApplication - Starting ServiceShippingApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-04-06 22:36:18 [main] INFO  r.b.s.ServiceShippingApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 22:36:20 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-06 22:36:20 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 104 ms. Found 1 JPA repository interface.
+2025-04-06 22:36:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-06 22:36:21 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-06 22:36:21 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-06 22:36:21 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-06 22:36:21 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-06 22:36:21 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2903 ms
+2025-04-06 22:36:21 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-06 22:36:22 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@23444a36
+2025-04-06 22:36:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-06 22:36:22 [main] INFO  liquibase.database - Set default schema name to public
+2025-04-06 22:36:22 [main] INFO  liquibase.changelog - Creating database history table with name: public.databasechangelog
+2025-04-06 22:36:22 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-06 22:36:22 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-04-06 22:36:22 [main] INFO  liquibase.command - Using deploymentId: 3978982848
+2025-04-06 22:36:22 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-06 22:36:22 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/shipping-order-table.yml::shippings-orders-table-extension::boshchenko
+2025-04-06 22:36:22 [main] INFO  liquibase.changelog - Custom SQL executed
+2025-04-06 22:36:22 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/shipping-order-table.yml::shippings-orders-table-extension::boshchenko ran successfully in 17ms
+2025-04-06 22:36:22 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/shipping-order-table.yml::shippings-orders-table-create::boshchenko
+2025-04-06 22:36:22 [main] INFO  liquibase.changelog - Table shippings_orders created
+2025-04-06 22:36:22 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/shipping-order-table.yml::shippings-orders-table-create::boshchenko ran successfully in 17ms
+2025-04-06 22:36:22 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-04-06 22:36:22 [main] INFO  liquibase.util - Run:                          2
+2025-04-06 22:36:22 [main] INFO  liquibase.util - Previously run:               0
+2025-04-06 22:36:22 [main] INFO  liquibase.util - Filtered out:                 0
+2025-04-06 22:36:22 [main] INFO  liquibase.util - -------------------------------
+2025-04-06 22:36:22 [main] INFO  liquibase.util - Total change sets:            2
+2025-04-06 22:36:22 [main] INFO  liquibase.util - Update summary generated
+2025-04-06 22:36:22 [main] INFO  liquibase.command - Update command completed successfully.
+2025-04-06 22:36:22 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 2
+2025-04-06 22:36:22 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-04-06 22:36:22 [main] INFO  liquibase.command - Command execution complete
+2025-04-06 22:36:22 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-06 22:36:23 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-06 22:36:23 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-06 22:36:23 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-06 22:36:23 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-06 22:36:23 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.8
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-06 22:36:23 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-06 22:36:23 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06 22:36:24 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-06 22:36:24 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [kafka:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = service-shipping-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-04-06 22:36:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-04-06 22:36:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-04-06 22:36:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1743978984915
+2025-04-06 22:36:24 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Node -1 disconnected.
+2025-04-06 22:36:24 [kafka-admin-client-thread | service-shipping-admin-0] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Connection to node -1 (kafka/172.19.0.7:9092) could not be established. Node may not be available.
+2025-04-06 22:36:25 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Node -1 disconnected.
+2025-04-06 22:36:25 [kafka-admin-client-thread | service-shipping-admin-0] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=service-shipping-admin-0] Connection to node -1 (kafka/172.19.0.7:9092) could not be established. Node may not be available.
+2025-04-06 22:36:25 [kafka-admin-client-thread | service-shipping-admin-0] WARN  o.a.k.clients.admin.KafkaAdminClient - [AdminClient clientId=service-shipping-admin-0] The DescribeTopicPartitions API is not supported, using Metadata API to describe topics.
+2025-04-06 22:36:25 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for service-shipping-admin-0 unregistered
+2025-04-06 22:36:25 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-04-06 22:36:25 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-06 22:36:25 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-04-06 22:36:25 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-06 22:36:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-06 22:36:25 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-payment-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = payment-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2025-04-06 22:36:25 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-04-06 22:36:25 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-04-06 22:36:25 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-04-06 22:36:25 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1743978985902
+2025-04-06 22:36:25 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Subscribed to topic(s): payed_orders
+2025-04-06 22:36:25 [main] INFO  r.b.s.ServiceShippingApplication - Started ServiceShippingApplication in 8.608 seconds (process running for 9.358)
+2025-04-06 22:36:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Error while fetching metadata with correlation id 2 : {payed_orders=UNKNOWN_TOPIC_OR_PARTITION}
+2025-04-06 22:36:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Cluster ID: HTrUF9eNT1K1IW__DDhmxw
+2025-04-06 22:36:26 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Error while fetching metadata with correlation id 5 : {payed_orders=LEADER_NOT_AVAILABLE}
+2025-04-06 22:36:26 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Error while fetching metadata with correlation id 7 : {payed_orders=LEADER_NOT_AVAILABLE}
+2025-04-06 22:36:26 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Discovered group coordinator kafka3:9092 (id: 2147483644 rack: null)
+2025-04-06 22:36:26 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] (Re-)joining group
+2025-04-06 22:36:26 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: need to re-join with the given member-id: consumer-payment-group-1-8aa1c944-7299-4c2d-85ae-2cbf0ac506ea
+2025-04-06 22:36:26 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] (Re-)joining group
+2025-04-06 22:36:29 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-payment-group-1-8aa1c944-7299-4c2d-85ae-2cbf0ac506ea', protocol='range'}
+2025-04-06 22:36:29 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Finished assignment for group at generation 1: {consumer-payment-group-1-8aa1c944-7299-4c2d-85ae-2cbf0ac506ea=Assignment(partitions=[payed_orders-0])}
+2025-04-06 22:36:29 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-payment-group-1-8aa1c944-7299-4c2d-85ae-2cbf0ac506ea', protocol='range'}
+2025-04-06 22:36:29 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Notifying assignor about the new Assignment(partitions=[payed_orders-0])
+2025-04-06 22:36:29 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Adding newly assigned partitions: payed_orders-0
+2025-04-06 22:36:29 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Found no committed offset for partition payed_orders-0
+2025-04-06 22:36:29 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting offset for partition payed_orders-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka1:9092 (id: 1 rack: null)], epoch=0}}.
+2025-04-06 22:36:29 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: partitions assigned: [payed_orders-0]
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: group is already rebalancing
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Revoke previously assigned partitions payed_orders-0
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: partitions revoked: [payed_orders-0]
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] (Re-)joining group
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-payment-group-1-8aa1c944-7299-4c2d-85ae-2cbf0ac506ea', protocol='range'}
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Finished assignment for group at generation 2: {consumer-payment-group-1-8aa1c944-7299-4c2d-85ae-2cbf0ac506ea=Assignment(partitions=[payed_orders-0, payed_orders-1, payed_orders-2]), consumer-payment-group-1-51041716-ffd2-4853-9c7e-5a944d570c94=Assignment(partitions=[new_orders-0, new_orders-1, new_orders-2])}
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-payment-group-1-8aa1c944-7299-4c2d-85ae-2cbf0ac506ea', protocol='range'}
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Notifying assignor about the new Assignment(partitions=[payed_orders-0, payed_orders-1, payed_orders-2])
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Adding newly assigned partitions: payed_orders-0, payed_orders-1, payed_orders-2
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Found no committed offset for partition payed_orders-0
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Found no committed offset for partition payed_orders-1
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Found no committed offset for partition payed_orders-2
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting offset for partition payed_orders-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka3:9092 (id: 3 rack: null)], epoch=0}}.
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting offset for partition payed_orders-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka2:9092 (id: 2 rack: null)], epoch=0}}.
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting offset for partition payed_orders-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka1:9092 (id: 1 rack: null)], epoch=0}}.
+2025-04-06 22:37:02 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: partitions assigned: [payed_orders-0, payed_orders-1, payed_orders-2]
+2025-04-06 22:45:25 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node -1 disconnected.
+2025-04-06 22:55:26 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node -1 disconnected.
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Revoke previously assigned partitions payed_orders-0, payed_orders-1, payed_orders-2
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: partitions revoked: [payed_orders-0, payed_orders-1, payed_orders-2]
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Member consumer-payment-group-1-8aa1c944-7299-4c2d-85ae-2cbf0ac506ea sending LeaveGroup request to coordinator kafka3:9092 (id: 2147483644 rack: null) due to the consumer unsubscribed from all topics
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: consumer pro-actively leaving the group
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Unsubscribed all topics or patterns and assigned partitions
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: consumer pro-actively leaving the group
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node 2 disconnected.
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Cancelled in-flight FETCH request with correlation id 7888 due to node 2 being disconnected (elapsed time since creation: 373ms, elapsed time since send: 373ms, throttle time: 0ms, request timeout: 30000ms)
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Cancelled in-flight FETCH request with correlation id 7892 due to node 2 being disconnected (elapsed time since creation: 135ms, elapsed time since send: 137ms, throttle time: 0ms, request timeout: 30000ms)
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Error sending fetch request (sessionId=954821350, epoch=FINAL) to node 2:
+org.apache.kafka.common.errors.DisconnectException: null
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node 2147483644 disconnected.
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Node 3 disconnected.
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Cancelled in-flight FETCH request with correlation id 7886 due to node 3 being disconnected (elapsed time since creation: 469ms, elapsed time since send: 469ms, throttle time: 0ms, request timeout: 30000ms)
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Cancelled in-flight FETCH request with correlation id 7890 due to node 3 being disconnected (elapsed time since creation: 229ms, elapsed time since send: 231ms, throttle time: 0ms, request timeout: 30000ms)
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Error sending fetch request (sessionId=1176053842, epoch=FINAL) to node 3:
+org.apache.kafka.common.errors.DisconnectException: null
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-payment-group-1 unregistered
+2025-04-06 22:57:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: Consumer stopped
+2025-04-06 22:57:32 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-06 22:57:32 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-04-06 22:57:32 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06 22:57:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-06 22:57:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-06 23:59:01 [main] INFO  r.b.s.ServiceShippingApplication - Starting ServiceShippingApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-04-06 23:59:01 [main] INFO  r.b.s.ServiceShippingApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 23:59:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-06 23:59:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 115 ms. Found 1 JPA repository interface.
+2025-04-06 23:59:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-06 23:59:03 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-06 23:59:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-06 23:59:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-06 23:59:03 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-06 23:59:03 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2007 ms
+2025-04-06 23:59:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-06 23:59:03 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@77cca767
+2025-04-06 23:59:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-06 23:59:04 [main] INFO  liquibase.database - Set default schema name to public
+2025-04-06 23:59:04 [main] INFO  liquibase.changelog - Creating database history table with name: public.databasechangelog
+2025-04-06 23:59:04 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-06 23:59:05 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-04-06 23:59:05 [main] INFO  liquibase.command - Using deploymentId: 3983945204
+2025-04-06 23:59:05 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-06 23:59:05 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/shipping-order-table.yml::shippings-orders-table-extension::boshchenko
+2025-04-06 23:59:05 [main] INFO  liquibase.changelog - Custom SQL executed
+2025-04-06 23:59:05 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/shipping-order-table.yml::shippings-orders-table-extension::boshchenko ran successfully in 19ms
+2025-04-06 23:59:05 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/shipping-order-table.yml::shippings-orders-table-create::boshchenko
+2025-04-06 23:59:05 [main] INFO  liquibase.changelog - Table shippings_orders created
+2025-04-06 23:59:05 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/shipping-order-table.yml::shippings-orders-table-create::boshchenko ran successfully in 30ms
+2025-04-06 23:59:05 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-04-06 23:59:05 [main] INFO  liquibase.util - Run:                          2
+2025-04-06 23:59:05 [main] INFO  liquibase.util - Previously run:               0
+2025-04-06 23:59:05 [main] INFO  liquibase.util - Filtered out:                 0
+2025-04-06 23:59:05 [main] INFO  liquibase.util - -------------------------------
+2025-04-06 23:59:05 [main] INFO  liquibase.util - Total change sets:            2
+2025-04-06 23:59:05 [main] INFO  liquibase.util - Update summary generated
+2025-04-06 23:59:05 [main] INFO  liquibase.command - Update command completed successfully.
+2025-04-06 23:59:05 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 2
+2025-04-06 23:59:05 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-04-06 23:59:05 [main] INFO  liquibase.command - Command execution complete
+2025-04-06 23:59:05 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-06 23:59:05 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-06 23:59:05 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-06 23:59:06 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-06 23:59:06 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-06 23:59:06 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.8
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-06 23:59:07 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-06 23:59:07 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06 23:59:07 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-06 23:59:08 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [kafka1:9092, kafka2:9092, kafka3:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = service-shipping-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-04-06 23:59:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-04-06 23:59:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-04-06 23:59:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1743983948191
+2025-04-06 23:59:08 [kafka-admin-client-thread | service-shipping-admin-0] WARN  o.a.k.clients.admin.KafkaAdminClient - [AdminClient clientId=service-shipping-admin-0] The DescribeTopicPartitions API is not supported, using Metadata API to describe topics.
+2025-04-06 23:59:08 [main] INFO  o.s.kafka.core.KafkaAdmin - Topic 'sent_orders' exists but has a different partition count: 1 not 3, increasing if the broker supports it
+2025-04-06 23:59:08 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for service-shipping-admin-0 unregistered
+2025-04-06 23:59:08 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-04-06 23:59:08 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-06 23:59:08 [kafka-admin-client-thread | service-shipping-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-04-06 23:59:08 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-06 23:59:08 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-06 23:59:08 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [kafka1:9092, kafka2:9092, kafka3:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-payment-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = payment-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2025-04-06 23:59:08 [main] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-04-06 23:59:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-04-06 23:59:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-04-06 23:59:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1743983948932
+2025-04-06 23:59:08 [main] INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Subscribed to topic(s): payed_orders
+2025-04-06 23:59:08 [main] INFO  r.b.s.ServiceShippingApplication - Started ServiceShippingApplication in 8.642 seconds (process running for 9.472)
+2025-04-06 23:59:08 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Error while fetching metadata with correlation id 2 : {payed_orders=LEADER_NOT_AVAILABLE}
+2025-04-06 23:59:08 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Cluster ID: tOusRfTpSYSKT9TtMbIcJA
+2025-04-06 23:59:08 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Discovered group coordinator kafka2:9092 (id: 2147483645 rack: null)
+2025-04-06 23:59:08 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] (Re-)joining group
+2025-04-06 23:59:08 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Request joining group due to: need to re-join with the given member-id: consumer-payment-group-1-0799fd0b-66dc-417b-a09f-1c460eae679c
+2025-04-06 23:59:09 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] (Re-)joining group
+2025-04-06 23:59:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-payment-group-1-0799fd0b-66dc-417b-a09f-1c460eae679c', protocol='range'}
+2025-04-06 23:59:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Finished assignment for group at generation 1: {consumer-payment-group-1-0799fd0b-66dc-417b-a09f-1c460eae679c=Assignment(partitions=[payed_orders-0]), consumer-payment-group-1-559f17ba-efed-49e0-a876-02a112a4ac4f=Assignment(partitions=[new_orders-0, new_orders-1, new_orders-2])}
+2025-04-06 23:59:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-payment-group-1-0799fd0b-66dc-417b-a09f-1c460eae679c', protocol='range'}
+2025-04-06 23:59:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Notifying assignor about the new Assignment(partitions=[payed_orders-0])
+2025-04-06 23:59:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Adding newly assigned partitions: payed_orders-0
+2025-04-06 23:59:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Found no committed offset for partition payed_orders-0
+2025-04-06 23:59:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=consumer-payment-group-1, groupId=payment-group] Resetting offset for partition payed_orders-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka3:9092 (id: 3 rack: null)], epoch=0}}.
+2025-04-06 23:59:15 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.k.l.KafkaMessageListenerContainer - payment-group: partitions assigned: [payed_orders-0]
