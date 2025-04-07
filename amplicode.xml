@@ -3,4 +3,23 @@
   <component name="AmplicodeJpaPluginProjectSettings">
     <option name="lastSelectedLanguage" value="Java" />
   </component>
+  <component name="AmplicodePersistenceUnitSettings">
+    <persistence-units>
+      <persistence-unit moduleName="service-orders" name="Default">
+        <packages>
+          <package value="ru.boshchenko.serviceorders" />
+        </packages>
+      </persistence-unit>
+      <persistence-unit moduleName="service-payment" name="Default">
+        <packages>
+          <package value="ru.boshchenko.servicepayment" />
+        </packages>
+      </persistence-unit>
+      <persistence-unit moduleName="service-shipping" name="Default">
+        <packages>
+          <package value="ru.boshchenko.serviceshipping" />
+        </packages>
+      </persistence-unit>
+    </persistence-units>
+  </component>
 </project>
