@@ -16,11 +16,15 @@ public class ShippingEventConsumerImpl implements ShippingEventConsumer {
     private final NotificationService notificationService;
 
     @Override
-    @KafkaListener(topics = "sent_orders", groupId = "notification-group")
+    @KafkaListener(
+            topics = "${spring.kafka.topics.sent_orders.name}",
+            groupId = "notification-group",
+            concurrency = "${spring.kafka.topics.sent_orders.partitions}"
+    )
     public void handleShipping(ShippingEvent shippingEvent) {
         try {
             log.info("Получено сообщение: {}", shippingEvent);
-        notificationService.createNotificationOnAnEvent(shippingEvent);
+            notificationService.createNotificationOnAnEvent(shippingEvent);
             log.info("Обработано сообщение: {}", shippingEvent);
         } catch (Exception e) {
             log.error("Ошибка обработки сообщения: {}", e.getMessage(), e);
