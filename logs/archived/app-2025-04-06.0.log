@@ -1,0 +1,679 @@
+2025-04-06 08:31:04 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-06 08:31:04 [main] INFO  r.b.s.ServiceOrdersApplication - Starting ServiceOrdersApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-04-06 08:31:04 [main] INFO  r.b.s.ServiceOrdersApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 08:31:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-06 08:31:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
+2025-04-06 08:31:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-06 08:31:05 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-06 08:31:05 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-06 08:31:05 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-06 08:31:05 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-06 08:31:05 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1025 ms
+2025-04-06 08:31:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-06 08:31:06 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@374c40ba
+2025-04-06 08:31:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-06 08:31:06 [main] INFO  liquibase.database - Set default schema name to public
+2025-04-06 08:31:06 [main] INFO  liquibase.changelog - Creating database history table with name: public.databasechangelog
+2025-04-06 08:31:06 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-06 08:31:06 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-04-06 08:31:06 [main] INFO  liquibase.command - Using deploymentId: 3928266445
+2025-04-06 08:31:06 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-06 08:31:06 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/user-table.yaml::user-table-extension::boshchenko
+2025-04-06 08:31:06 [main] INFO  liquibase.changelog - Custom SQL executed
+2025-04-06 08:31:06 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/user-table.yaml::user-table-extension::boshchenko ran successfully in 9ms
+2025-04-06 08:31:06 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/user-table.yaml::user-table-create::boshchenko
+2025-04-06 08:31:06 [main] INFO  liquibase.changelog - Table users created
+2025-04-06 08:31:06 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/user-table.yaml::user-table-create::boshchenko ran successfully in 17ms
+2025-04-06 08:31:06 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/order-table.yaml::order-table::boshchenko
+2025-04-06 08:31:06 [main] INFO  liquibase.changelog - Table orders created
+2025-04-06 08:31:06 [main] INFO  liquibase.changelog - Table order_products created
+2025-04-06 08:31:06 [main] INFO  liquibase.changelog - Primary key added to order_products (order_id, product_id)
+2025-04-06 08:31:06 [main] INFO  liquibase.changelog - Foreign key constraint added to orders (user_id)
+2025-04-06 08:31:06 [main] INFO  liquibase.changelog - Foreign key constraint added to order_products (order_id)
+2025-04-06 08:31:06 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/order-table.yaml::order-table::boshchenko ran successfully in 16ms
+2025-04-06 08:31:06 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-04-06 08:31:06 [main] INFO  liquibase.util - Run:                          3
+2025-04-06 08:31:06 [main] INFO  liquibase.util - Previously run:               0
+2025-04-06 08:31:06 [main] INFO  liquibase.util - Filtered out:                 0
+2025-04-06 08:31:06 [main] INFO  liquibase.util - -------------------------------
+2025-04-06 08:31:06 [main] INFO  liquibase.util - Total change sets:            3
+2025-04-06 08:31:06 [main] INFO  liquibase.util - Update summary generated
+2025-04-06 08:31:06 [main] INFO  liquibase.command - Update command completed successfully.
+2025-04-06 08:31:06 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 3
+2025-04-06 08:31:06 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-04-06 08:31:06 [main] INFO  liquibase.command - Command execution complete
+2025-04-06 08:31:06 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-06 08:31:06 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-06 08:31:06 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-06 08:31:06 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-06 08:31:06 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-06 08:31:06 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.8
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-06 08:31:07 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-06 08:31:07 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06 08:31:07 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-06 08:31:07 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [kafka:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = service-orders-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-04-06 08:31:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-04-06 08:31:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-04-06 08:31:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1743928268048
+2025-04-06 08:31:08 [kafka-admin-client-thread | service-orders-admin-0] WARN  o.a.k.clients.admin.KafkaAdminClient - [AdminClient clientId=service-orders-admin-0] The DescribeTopicPartitions API is not supported, using Metadata API to describe topics.
+2025-04-06 08:31:08 [main] INFO  o.s.kafka.core.KafkaAdmin - Topic 'new_orders' exists but has a different partition count: 1 not 3, increasing if the broker supports it
+2025-04-06 08:31:08 [kafka-admin-client-thread | service-orders-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for service-orders-admin-0 unregistered
+2025-04-06 08:31:08 [kafka-admin-client-thread | service-orders-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-04-06 08:31:08 [kafka-admin-client-thread | service-orders-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-06 08:31:08 [kafka-admin-client-thread | service-orders-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-04-06 08:31:08 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-06 08:31:08 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-06 08:31:08 [main] INFO  r.b.s.ServiceOrdersApplication - Started ServiceOrdersApplication in 4.129 seconds (process running for 4.516)
+2025-04-06 08:34:42 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-06 08:34:42 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-06 08:34:42 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-06 08:34:55 [http-nio-8080-exec-3] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = service-orders-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2025-04-06 08:34:55 [http-nio-8080-exec-3] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-04-06 08:34:55 [http-nio-8080-exec-3] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=service-orders-producer-1] Instantiated an idempotent producer.
+2025-04-06 08:34:55 [http-nio-8080-exec-3] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-04-06 08:34:55 [http-nio-8080-exec-3] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-04-06 08:34:55 [http-nio-8080-exec-3] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1743928495781
+2025-04-06 08:34:55 [kafka-producer-network-thread | service-orders-producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=service-orders-producer-1] Cluster ID: LA0CedYgRm2UC5eLG1iEjA
+2025-04-06 08:34:55 [kafka-producer-network-thread | service-orders-producer-1] INFO  o.a.k.c.p.i.TransactionManager - [Producer clientId=service-orders-producer-1] ProducerId set to 0 with epoch 0
+2025-04-06 08:34:55 [http-nio-8080-exec-3] INFO  r.b.s.service.iml.OrderServiceImpl - Создано сообщение: OrderEvent(orderId=9d5cb124-0d77-4330-867a-3d46d0da4242, userId=a01f837d-fbd8-46a4-a40d-7c4c90f960b1, amount=50050.00, productId=[tovar1, tovar2, tovar3], deliveryAddress=г.Москва, ул.Пушкина, д.6)
+2025-04-06 08:42:25 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-06 08:42:25 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-04-06 08:42:25 [SpringApplicationShutdownHook] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=service-orders-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2025-04-06 08:42:25 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-04-06 08:42:25 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-06 08:42:25 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-04-06 08:42:25 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-04-06 08:42:25 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.producer for service-orders-producer-1 unregistered
+2025-04-06 08:42:25 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06 08:42:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-06 08:42:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-06 22:36:52 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-06 22:36:52 [main] INFO  r.b.s.ServiceOrdersApplication - Starting ServiceOrdersApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-04-06 22:36:52 [main] INFO  r.b.s.ServiceOrdersApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 22:36:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-06 22:36:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 2 JPA repository interfaces.
+2025-04-06 22:36:53 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-06 22:36:53 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-06 22:36:53 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-06 22:36:53 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-06 22:36:53 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-06 22:36:53 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1008 ms
+2025-04-06 22:36:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-06 22:36:53 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3709748f
+2025-04-06 22:36:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-06 22:36:53 [main] INFO  liquibase.database - Set default schema name to public
+2025-04-06 22:36:54 [main] INFO  liquibase.changelog - Creating database history table with name: public.databasechangelog
+2025-04-06 22:36:54 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-06 22:36:54 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-04-06 22:36:54 [main] INFO  liquibase.command - Using deploymentId: 3979014298
+2025-04-06 22:36:54 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-06 22:36:54 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/user-table.yaml::user-table-extension::boshchenko
+2025-04-06 22:36:54 [main] INFO  liquibase.changelog - Custom SQL executed
+2025-04-06 22:36:54 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/user-table.yaml::user-table-extension::boshchenko ran successfully in 12ms
+2025-04-06 22:36:54 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/user-table.yaml::user-table-create::boshchenko
+2025-04-06 22:36:54 [main] INFO  liquibase.changelog - Table users created
+2025-04-06 22:36:54 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/user-table.yaml::user-table-create::boshchenko ran successfully in 20ms
+2025-04-06 22:36:54 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/order-table.yaml::order-table::boshchenko
+2025-04-06 22:36:54 [main] INFO  liquibase.changelog - Table orders created
+2025-04-06 22:36:54 [main] INFO  liquibase.changelog - Table order_products created
+2025-04-06 22:36:54 [main] INFO  liquibase.changelog - Primary key added to order_products (order_id, product_id)
+2025-04-06 22:36:54 [main] INFO  liquibase.changelog - Foreign key constraint added to orders (user_id)
+2025-04-06 22:36:54 [main] INFO  liquibase.changelog - Foreign key constraint added to order_products (order_id)
+2025-04-06 22:36:54 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/order-table.yaml::order-table::boshchenko ran successfully in 18ms
+2025-04-06 22:36:54 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-04-06 22:36:54 [main] INFO  liquibase.util - Run:                          3
+2025-04-06 22:36:54 [main] INFO  liquibase.util - Previously run:               0
+2025-04-06 22:36:54 [main] INFO  liquibase.util - Filtered out:                 0
+2025-04-06 22:36:54 [main] INFO  liquibase.util - -------------------------------
+2025-04-06 22:36:54 [main] INFO  liquibase.util - Total change sets:            3
+2025-04-06 22:36:54 [main] INFO  liquibase.util - Update summary generated
+2025-04-06 22:36:54 [main] INFO  liquibase.command - Update command completed successfully.
+2025-04-06 22:36:54 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 3
+2025-04-06 22:36:54 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-04-06 22:36:54 [main] INFO  liquibase.command - Command execution complete
+2025-04-06 22:36:54 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-06 22:36:54 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-06 22:36:54 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-06 22:36:54 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-06 22:36:54 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-06 22:36:54 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.8
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-06 22:36:55 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-06 22:36:55 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06 22:36:55 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-06 22:36:56 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [kafka:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = service-orders-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-04-06 22:36:56 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-04-06 22:36:56 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-04-06 22:36:56 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1743979016201
+2025-04-06 22:36:56 [kafka-admin-client-thread | service-orders-admin-0] WARN  o.a.k.clients.admin.KafkaAdminClient - [AdminClient clientId=service-orders-admin-0] The DescribeTopicPartitions API is not supported, using Metadata API to describe topics.
+2025-04-06 22:36:56 [kafka-admin-client-thread | service-orders-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for service-orders-admin-0 unregistered
+2025-04-06 22:36:56 [kafka-admin-client-thread | service-orders-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-04-06 22:36:56 [kafka-admin-client-thread | service-orders-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-06 22:36:56 [kafka-admin-client-thread | service-orders-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-04-06 22:36:56 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-06 22:36:56 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-06 22:36:56 [main] INFO  r.b.s.ServiceOrdersApplication - Started ServiceOrdersApplication in 4.607 seconds (process running for 4.966)
+2025-04-06 22:37:38 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-06 22:37:38 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-06 22:37:38 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-04-06 22:37:50 [http-nio-8080-exec-3] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [kafka:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = service-orders-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2025-04-06 22:37:50 [http-nio-8080-exec-3] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-04-06 22:37:50 [http-nio-8080-exec-3] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=service-orders-producer-1] Instantiated an idempotent producer.
+2025-04-06 22:37:50 [http-nio-8080-exec-3] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-04-06 22:37:50 [http-nio-8080-exec-3] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-04-06 22:37:50 [http-nio-8080-exec-3] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1743979070210
+2025-04-06 22:37:50 [kafka-producer-network-thread | service-orders-producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=service-orders-producer-1] Cluster ID: HTrUF9eNT1K1IW__DDhmxw
+2025-04-06 22:37:50 [kafka-producer-network-thread | service-orders-producer-1] INFO  o.a.k.c.p.i.TransactionManager - [Producer clientId=service-orders-producer-1] ProducerId set to 0 with epoch 0
+2025-04-06 22:37:50 [http-nio-8080-exec-3] INFO  r.b.s.service.iml.OrderServiceImpl - Попытка отправки сообщения асинхронно с ключом: айди клиента 51ac3cf8-f5f2-4732-bb81-5a316517a7a4
+2025-04-06 22:37:50 [kafka-producer-network-thread | service-orders-producer-1] INFO  r.b.s.service.iml.OrderServiceImpl - Сообщение отправлено: new_orders-1@0
+2025-04-06 22:46:50 [kafka-producer-network-thread | service-orders-producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=service-orders-producer-1] Node -1 disconnected.
+2025-04-06 22:56:50 [kafka-producer-network-thread | service-orders-producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=service-orders-producer-1] Node -1 disconnected.
+2025-04-06 22:57:32 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-06 22:57:32 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-04-06 22:57:32 [SpringApplicationShutdownHook] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=service-orders-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2025-04-06 22:57:32 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-04-06 22:57:32 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-06 22:57:32 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-04-06 22:57:32 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-04-06 22:57:32 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.producer for service-orders-producer-1 unregistered
+2025-04-06 22:57:32 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06 22:57:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-06 22:57:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-06 23:59:01 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-06 23:59:01 [main] INFO  r.b.s.ServiceOrdersApplication - Starting ServiceOrdersApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-04-06 23:59:01 [main] INFO  r.b.s.ServiceOrdersApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-06 23:59:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-06 23:59:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 80 ms. Found 2 JPA repository interfaces.
+2025-04-06 23:59:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-06 23:59:03 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-06 23:59:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-06 23:59:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-06 23:59:03 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-06 23:59:03 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2178 ms
+2025-04-06 23:59:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-06 23:59:04 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a84788f
+2025-04-06 23:59:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-06 23:59:05 [main] INFO  liquibase.database - Set default schema name to public
+2025-04-06 23:59:05 [main] INFO  liquibase.changelog - Creating database history table with name: public.databasechangelog
+2025-04-06 23:59:05 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-06 23:59:06 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-04-06 23:59:06 [main] INFO  liquibase.command - Using deploymentId: 3983946164
+2025-04-06 23:59:06 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2025-04-06 23:59:06 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/user-table.yaml::user-table-extension::boshchenko
+2025-04-06 23:59:06 [main] INFO  liquibase.changelog - Custom SQL executed
+2025-04-06 23:59:06 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/user-table.yaml::user-table-extension::boshchenko ran successfully in 19ms
+2025-04-06 23:59:06 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/user-table.yaml::user-table-create::boshchenko
+2025-04-06 23:59:06 [main] INFO  liquibase.changelog - Table users created
+2025-04-06 23:59:06 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/user-table.yaml::user-table-create::boshchenko ran successfully in 27ms
+2025-04-06 23:59:06 [main] INFO  liquibase.ui - Running Changeset: db/changelog/v/order-table.yaml::order-table::boshchenko
+2025-04-06 23:59:06 [main] INFO  liquibase.changelog - Table orders created
+2025-04-06 23:59:06 [main] INFO  liquibase.changelog - Table order_products created
+2025-04-06 23:59:06 [main] INFO  liquibase.changelog - Primary key added to order_products (order_id, product_id)
+2025-04-06 23:59:06 [main] INFO  liquibase.changelog - Foreign key constraint added to orders (user_id)
+2025-04-06 23:59:06 [main] INFO  liquibase.changelog - Foreign key constraint added to order_products (order_id)
+2025-04-06 23:59:06 [main] INFO  liquibase.changelog - ChangeSet db/changelog/v/order-table.yaml::order-table::boshchenko ran successfully in 28ms
+2025-04-06 23:59:06 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-04-06 23:59:06 [main] INFO  liquibase.util - Run:                          3
+2025-04-06 23:59:06 [main] INFO  liquibase.util - Previously run:               0
+2025-04-06 23:59:06 [main] INFO  liquibase.util - Filtered out:                 0
+2025-04-06 23:59:06 [main] INFO  liquibase.util - -------------------------------
+2025-04-06 23:59:06 [main] INFO  liquibase.util - Total change sets:            3
+2025-04-06 23:59:06 [main] INFO  liquibase.util - Update summary generated
+2025-04-06 23:59:06 [main] INFO  liquibase.command - Update command completed successfully.
+2025-04-06 23:59:06 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 3
+2025-04-06 23:59:06 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-04-06 23:59:06 [main] INFO  liquibase.command - Command execution complete
+2025-04-06 23:59:06 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-06 23:59:06 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-06 23:59:06 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-06 23:59:06 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-06 23:59:06 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-06 23:59:06 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.8
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-06 23:59:07 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-06 23:59:07 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06 23:59:08 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-06 23:59:08 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [kafka1:9092, kafka2:9092, kafka3:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = service-orders-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-04-06 23:59:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-04-06 23:59:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-04-06 23:59:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1743983948932
+2025-04-06 23:59:09 [kafka-admin-client-thread | service-orders-admin-0] WARN  o.a.k.clients.admin.KafkaAdminClient - [AdminClient clientId=service-orders-admin-0] The DescribeTopicPartitions API is not supported, using Metadata API to describe topics.
+2025-04-06 23:59:09 [main] INFO  o.s.kafka.core.KafkaAdmin - Topic 'new_orders' exists but has a different partition count: 1 not 3, increasing if the broker supports it
+2025-04-06 23:59:09 [kafka-admin-client-thread | service-orders-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for service-orders-admin-0 unregistered
+2025-04-06 23:59:09 [kafka-admin-client-thread | service-orders-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-04-06 23:59:09 [kafka-admin-client-thread | service-orders-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-06 23:59:09 [kafka-admin-client-thread | service-orders-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-04-06 23:59:09 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-06 23:59:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-06 23:59:09 [main] INFO  r.b.s.ServiceOrdersApplication - Started ServiceOrdersApplication in 8.714 seconds (process running for 9.59)
