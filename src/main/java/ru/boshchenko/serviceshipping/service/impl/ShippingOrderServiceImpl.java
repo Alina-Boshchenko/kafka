@@ -6,7 +6,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
-import ru.boshchenko.serviceshipping.dto.PaymentEvent;
+import ru.boshchenko.servicepayment.dto.PaymentEvent;
 import ru.boshchenko.serviceshipping.dto.ShippingEvent;
 import ru.boshchenko.serviceshipping.mapper.EventMapper;
 import ru.boshchenko.serviceshipping.model.ShippingOrder;
@@ -43,20 +43,20 @@ public class ShippingOrderServiceImpl implements ShippingOrderService {
         String trackingNumber = deliveryService.sendingForDelivery(listCollectedProduct);
 
         ShippingOrder shippingOrder = new ShippingOrder();
-        shippingOrder.setOrderId(paymentEvent.getOrderId());
+        shippingOrder.setOrderId(UUID.fromString(paymentEvent.getOrderId()));
         shippingOrder.setTrackingNumber(trackingNumber);
         shippingOrder.setShippingAddress(paymentEvent.getDeliveryAddress());
         shippingOrder.setStatus(ShippingStatus.SHIPPED);
 
         shippingOrderRepo.save(shippingOrder);
 
-        ShippingEvent event = eventMapper.toShippingEvent(shippingOrder, paymentEvent.getUserId());
+        ShippingEvent event = eventMapper.toShippingEvent(shippingOrder, UUID.fromString(paymentEvent.getUserId()));
         kafkaTemplate.send(
                 "sent_orders",
-                event.getOrderId().toString(),
+                event.getUserId(),
                 event
         );
-        log.info("Создано сообщение: {}", event);
+        log.info("ОТПРАВЛЕНО СООБЩЕНИЕ В ТОПИК \"sent_orders\": {}", event);
     }
 
 }

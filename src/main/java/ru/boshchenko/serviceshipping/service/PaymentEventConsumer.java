@@ -1,7 +1,7 @@
 package ru.boshchenko.serviceshipping.service;
 
 import org.springframework.stereotype.Service;
-import ru.boshchenko.serviceshipping.dto.PaymentEvent;
+import ru.boshchenko.servicepayment.dto.PaymentEvent;
 
 @Service
 public interface PaymentEventConsumer {

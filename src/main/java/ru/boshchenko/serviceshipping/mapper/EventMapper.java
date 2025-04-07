@@ -12,8 +12,8 @@ public class EventMapper {
 
     public ShippingEvent toShippingEvent(ShippingOrder shippingOrder, UUID userId){
         return new ShippingEvent(
-                shippingOrder.getOrderId(),
-                userId,
+                shippingOrder.getOrderId().toString(),
+                userId.toString(),
                 shippingOrder.getTrackingNumber(),
                 Instant.now()
         );

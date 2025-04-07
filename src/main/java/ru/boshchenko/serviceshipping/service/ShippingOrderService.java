@@ -1,6 +1,6 @@
 package ru.boshchenko.serviceshipping.service;
 
-import ru.boshchenko.serviceshipping.dto.PaymentEvent;
+import ru.boshchenko.servicepayment.dto.PaymentEvent;
 
 public interface ShippingOrderService {
 

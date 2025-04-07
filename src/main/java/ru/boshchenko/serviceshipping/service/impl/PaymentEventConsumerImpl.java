@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
-import ru.boshchenko.serviceshipping.dto.PaymentEvent;
+import ru.boshchenko.servicepayment.dto.PaymentEvent;
 import ru.boshchenko.serviceshipping.service.PaymentEventConsumer;
 import ru.boshchenko.serviceshipping.service.ShippingOrderService;
 
@@ -16,9 +16,14 @@ public class PaymentEventConsumerImpl implements PaymentEventConsumer {
     private final ShippingOrderService service;
 
     @Override
-    @KafkaListener(topics = "payed_orders", groupId = "payment-group")
+    @KafkaListener(topics = "payed_orders", groupId = "shipping-group")
     public void handlePayment(PaymentEvent paymentEvent) {
-        service.createBasedOnAnEvent(paymentEvent);
-        log.info("Принято сообщение в сервисе отгрузка {}", paymentEvent);
+        try {
+            log.info("Получено сообщение: {}", paymentEvent);
+            service.createBasedOnAnEvent(paymentEvent);
+            log.info("Обработано сообщение: {}", paymentEvent);
+        } catch (Exception e) {
+            log.error("Ошибка обработки сообщения: {}", e.getMessage(), e);
+        }
     }
 }

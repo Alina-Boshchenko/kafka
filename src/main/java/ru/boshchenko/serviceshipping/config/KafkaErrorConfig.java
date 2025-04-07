@@ -19,7 +19,8 @@ public class KafkaErrorConfig {
         FixedBackOff backOff = new FixedBackOff(2000L, 3L);
 
         ConsumerRecordRecoverer recoverer = (record, ex) -> {
-            log.error("Окончательный сбой после повторных попыток: {}", ex.getMessage());
+            log.error("Окончательный сбой после повторных попыток. Топик: {}, раздел: {}, ключ: {}, значение: {}",
+                    record.topic(), record.partition(), record.key(), record.value(), ex);
         };
 
         BackOffHandler backOffHandler = new BackOffHandler() {
