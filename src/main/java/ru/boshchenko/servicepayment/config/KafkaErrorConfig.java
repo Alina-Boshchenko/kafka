@@ -17,10 +17,11 @@ public class KafkaErrorConfig {
 
     @Bean
     public DefaultErrorHandler errorHandler() {
-        FixedBackOff backOff = new FixedBackOff(2000L, 3L);
+        FixedBackOff backOff = new FixedBackOff(3000, 3);
 
         ConsumerRecordRecoverer recoverer = (record, ex) -> {
-            log.error("Окончательный сбой после повторных попыток: {}", ex.getMessage());
+            log.error("Окончательный сбой после повторных попыток. Топик: {}, раздел: {}, ключ: {}, значение: {}",
+                    record.topic(), record.partition(), record.key(), record.value(), ex);
         };
 
         BackOffHandler backOffHandler = new BackOffHandler() {

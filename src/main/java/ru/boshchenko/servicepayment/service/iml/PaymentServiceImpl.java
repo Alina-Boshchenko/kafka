@@ -8,8 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
+import ru.boshchenko.serviceorders.dto.OrderEvent;
 import ru.boshchenko.servicepayment.dto.BankResponse;
-import ru.boshchenko.servicepayment.dto.OrderEvent;
+//import ru.boshchenko.servicepayment.dto.OrderEvent;
 import ru.boshchenko.servicepayment.dto.PaymentEvent;
 import ru.boshchenko.servicepayment.dto.UserResponse;
 import ru.boshchenko.servicepayment.mapper.EventMapper;
@@ -38,7 +39,7 @@ public class PaymentServiceImpl implements PaymentService {
 
 
     @Override
-    @Transactional(isolation = Isolation.READ_COMMITTED)
+    @Transactional(isolation = Isolation.SERIALIZABLE)
     public void create(OrderEvent orderEvent) {
         String url = "http://service-orders:8080/api/user/{id}";
         UserResponse userResponse = restTemplate.getForObject(url, UserResponse.class, orderEvent.getUserId());
@@ -57,7 +58,10 @@ public class PaymentServiceImpl implements PaymentService {
         if (response.isSuccess()){
             payment.setStatus(PaymentStatus.SUCCESS);
             payment.setBankTransactionId(response.getTransactionId());
-            kafkaTemplate.send("payed_orders", orderEvent.getOrderId().toString(), mapper.toPaymentEvent(orderEvent));
+            kafkaTemplate.send(
+                    "payed_orders",
+                    orderEvent.getUserId(),
+                    mapper.toPaymentEvent(orderEvent));
             log.info("Оплата прошла успешно, сообщение отправлено в топик payed_orders");
         } else {
             payment.setStatus(PaymentStatus.FAILED);
